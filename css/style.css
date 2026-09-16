@@ -30,11 +30,21 @@ background:#d8d8d8;
 
 }
 
+.site-header {
+  display: flex;                  
+  justify-content: left; 
+  align-items: left;            
+  padding: 10px;
+  text-align: left;
+}
+
 .logo img{
 
 height:55px;
 
 }
+
+
 
 nav ul{
 
