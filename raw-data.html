@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raw Data - WiFi 7 Mall Testing</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!--for some reason header and footer have to be hard coded in each page for it to work on github pages, can't be added as a component-->
+<header class="navbar">   
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="WiFi 7 Logo">
+            
+        </a>
+        
+    </div>
+
+    <div><h1 class="site-header">WiFi 7 Mall Testing</h1></div>
+
+    <nav>
+
+       <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="setup.html">Setup</a></li>
+    <li><a href="scenario-maps.html">Scenario Maps</a></li>
+    <li><a href="raw-data.html">Raw Data</a></li>
+    <li><a href="about.html">About</a></li>
+</ul>
+
+    </nav>
+
+</header>
+
+<main class="raw-data-page">
+
+    <h1 class="page-title">Raw Data</h1>
+
+    <p class="page-intro">
+        Results collected during WiFi 7 field testing
+        at Westfield Newmarket.
+    </p>
+
+    <div class="data-buttons">
+
+        <button class="data-button active"
+                onclick="filterData('all', this)">
+            All
+        </button>
+
+        <button class="data-button"
+                onclick="filterData('LV1-04', this)">
+            LV1-04
+        </button>
+
+        <button class="data-button"
+                onclick="filterData('LV2-06', this)">
+            LV2-06
+        </button>
+
+        <button class="data-button"
+                onclick="filterData('LV3-03', this)">
+            LV3-03
+        </button>
+
+        <button class="data-button"
+                onclick="filterData('LV4M-01', this)">
+            LV4M-01
+        </button>
+
+    </div>
+
+    <div class="table-container">
+
+        <table class="results-table">
+
+            <thead>
+                <tr>
+                    <th>Test Case</th>
+                    <th>Band</th>
+                    <th>Channel / Frequency</th>
+                    <th>Population</th>
+                    <th>Min RSSI</th>
+                    <th>Max RSSI</th>
+                    <th>Avg RSSI</th>
+                    <th>Protocol</th>
+                    <th>Total Packets</th>
+                    <th>Interval</th>
+                    <th>Transfer</th>
+                    <th>Jitter</th>
+                    <th>Packet Loss</th>
+                    <th>Throughput</th>
+                </tr>
+            </thead>
+
+            <tbody id="results-body">
+
+                <!-- We will put the investigation data here -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <div class="footer-container">
+
+         <div class="footer-about">
+
+            <h3>WiFi 7 Mall Testing Project</h3>
+
+            
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                
+
+                <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+
+                <li><a href="faq.html">FAQs</a></li>
+
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 WiFi 7 Mall Testing Project
+
+    </div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+<script>
+
+const results = [
+
+   
+
+    
+
+
+    
+
+    {
+        testCase: "LV1-04",
+        band: "2.4 GHz",
+        channel: "Ch 8 / 2447 MHz",
+        population: "15-25p",
+        minRSSI: "-76 dBm",
+        maxRSSI: "-47 dBm",
+        avgRSSI: "-60.69 dBm",
+        protocol: "TCP",
+        packets: "5076",
+        interval: "0-60.12s",
+        transfer: "61.9 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "8.63 Mbps"
+    },
+
+    {
+        testCase: "LV1-04",
+        band: "2.4 GHz",
+        channel: "Ch 8 / 2447 MHz",
+        population: "15-25p",
+        minRSSI: "-73 dBm",
+        maxRSSI: "-49 dBm",
+        avgRSSI: "-61.27 dBm",
+        protocol: "UDP",
+        packets: "544",
+        interval: "0-60.01s",
+        transfer: "64.1 MB",
+        jitter: "1.098 ms",
+        packetLoss: "5,339/51,796 (10%)",
+        throughput: "8.96 Mbps"
+    },
+
+    {
+        testCase: "LV1-04",
+        band: "5 GHz",
+        channel: "Ch 40 / 5200 MHz",
+        population: "15-25p",
+        minRSSI: "-77 dBm",
+        maxRSSI: "-48 dBm",
+        avgRSSI: "-64.14 dBm",
+        protocol: "TCP",
+        packets: "6646",
+        interval: "0-61.09s",
+        transfer: "604 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "82.9 Mbps"
+    },
+
+    {
+        testCase: "LV1-04",
+        band: "5 GHz",
+        channel: "Ch 40 / 5200 MHz",
+        population: "15-25p",
+        minRSSI: "-82 dBm",
+        maxRSSI: "-49 dBm",
+        avgRSSI: "-65.15 dBm",
+        protocol: "UDP",
+        packets: "782",
+        interval: "0-60.18s",
+        transfer: "71.0 MB",
+        jitter: "0.564 ms",
+        packetLoss: "111/51,557 (0.22%)",
+        throughput: "9.90 Mbps"
+    },
+
+    {
+        testCase: "LV1-04",
+        band: "6 GHz",
+        channel: "Ch 5 / 5975 MHz",
+        population: "15-25p",
+        minRSSI: "-85 dBm",
+        maxRSSI: "-55 dBm",
+        avgRSSI: "-70.65 dBm",
+        protocol: "TCP",
+        packets: "7005",
+        interval: "0-60.07s",
+        transfer: "751 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "105 Mbps"
+    },
+
+    {
+        testCase: "LV1-04",
+        band: "6 GHz",
+        channel: "Ch 5 / 5975 MHz",
+        population: "15-25p",
+        minRSSI: "-86 dBm",
+        maxRSSI: "-53 dBm",
+        avgRSSI: "-69.36 dBm",
+        protocol: "UDP",
+        packets: "904",
+        interval: "0-60.01s",
+        transfer: "71.0 MB",
+        jitter: "0.404 ms",
+        packetLoss: "407/51,797 (0.79%)",
+        throughput: "9.92 Mbps"
+    },
+
+
+     {
+        testCase: "LV2-06",
+        band: "2.4 GHz",
+        channel: "Ch 8 / 2447 MHz",
+        population: "25-30p",
+        minRSSI: "-51 dBm",
+        maxRSSI: "-24 dBm",
+        avgRSSI: "-29 dBm",
+        protocol: "UDP",
+        packets: "39184",
+        interval: "0-60.42s",
+        transfer: "69.4 MB",
+        jitter: "4.871 ms",
+        packetLoss: "1,561/51,848 (3%)",
+        throughput: "9.64 Mbps"
+    },
+
+
+
+    {
+        testCase: "LV3-03",
+        band: "2.4 GHz",
+        channel: "Ch 8 / 2447 MHz",
+        population: "40-60p",
+        minRSSI: "-90 dBm",
+        maxRSSI: "-40 dBm",
+        avgRSSI: "-67.01 dBm",
+        protocol: "TCP",
+        packets: "2366",
+        interval: "0-60.05s",
+        transfer: "39.1 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "5.47 Mbps"
+    },
+
+    {
+        testCase: "LV3-03",
+        band: "2.4 GHz",
+        channel: "Ch 8 / 2447 MHz",
+        population: "40-60p",
+        minRSSI: "-85 dBm",
+        maxRSSI: "-46 dBm",
+        avgRSSI: "-62.02 dBm",
+        protocol: "UDP",
+        packets: "294",
+        interval: "0-60.10s",
+        transfer: "32.5 MB",
+        jitter: "1.366 ms",
+        packetLoss: "28,340/51,859 (55%)",
+        throughput: "4.53 Mbps"
+    },
+
+    {
+        testCase: "LV3-03",
+        band: "5 GHz",
+        channel: "Ch 40 / 5200 MHz",
+        population: "40-60p",
+        minRSSI: "-97 dBm",
+        maxRSSI: "-53 dBm",
+        avgRSSI: "-84.37 dBm",
+        protocol: "TCP",
+        packets: "3519",
+        interval: "0-60.04s",
+        transfer: "295 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "41.2 Mbps"
+    },
+
+    {
+        testCase: "LV3-03",
+        band: "5 GHz",
+        channel: "Ch 40 / 5200 MHz",
+        population: "40-60p",
+        minRSSI: "-98 dBm",
+        maxRSSI: "-55 dBm",
+        avgRSSI: "-77.54 dBm",
+        protocol: "UDP",
+        packets: "526",
+        interval: "0-60.01s",
+        transfer: "48.8 MB",
+        jitter: "1.290 ms",
+        packetLoss: "16,461/51,797 (32%)",
+        throughput: "6.82 Mbps"
+    },
+
+    {
+        testCase: "LV3-03",
+        band: "6 GHz",
+        channel: "Ch 5 / 5975 MHz",
+        population: "40-60p",
+        minRSSI: "-98 dBm",
+        maxRSSI: "-60 dBm",
+        avgRSSI: "-76.95 dBm",
+        protocol: "TCP",
+        packets: "2943",
+        interval: "0.00-255.58s ",
+        transfer: "224 MB ",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "7.35 Mbps ",
+        invalid: false
+    },
+
+    {
+        testCase: "LV3-03",
+        band: "6 GHz",
+        channel: "Ch 5 / 5975 MHz",
+        population: "40-60p",
+        minRSSI: "-99 dBm",
+        maxRSSI: "-64 dBm",
+        avgRSSI: "-84.45 dBm",
+        protocol: "UDP",
+        packets: "684",
+        interval: "0-60.06s",
+        transfer: "32.4 MB",
+        jitter: "4.065 ms",
+        packetLoss: "28,265/51,711 (55%)",
+        throughput: "4.52 Mbps"
+    },
+
+    {
+        testCase: "LV3-03",
+        band: "MLO",
+        channel: "Multi-Link",
+        population: "40-60p",
+        minRSSI: "-60 dBm",
+        maxRSSI: "-27 dBm",
+        avgRSSI: "-34.64 dBm",
+        protocol: "TCP",
+        packets: "20901",
+        interval: "0-60.03s",
+        transfer: "25.5 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "3.56 Mbps"
+    },
+
+    {
+        testCase: "LV3-03",
+        band: "MLO",
+        channel: "Multi-Link",
+        population: "40-60p",
+        minRSSI: "-60 dBm",
+        maxRSSI: "-27 dBm",
+        avgRSSI: "-34.64 dBm",
+        protocol: "UDP",
+        packets: "64081",
+        interval: "0-60.03s",
+        transfer: "33.0 MB",
+        jitter: "0.929 ms",
+        packetLoss: "27,922/51,810 (54%)",
+        throughput: "4.61 Mbps"
+    },
+
+
+   
+
+    
+
+    {
+        testCase: "LV4M-01",
+        band: "2.4 GHz",
+        channel: "8 / 2447 MHz",
+        population: "10-12p",
+        minRSSI: "-37 dBm",
+        maxRSSI: "-24 dBm",
+        avgRSSI: "-28.8 dBm",
+        protocol: "UDP",
+        packets: "24162",
+        interval: "0-60.08s",
+        transfer: "71.5 MB",
+        jitter: "0.000 ms",
+        packetLoss: "0/51,786 (0%)",
+        throughput: "1.25 Mbps"
+    },
+
+    {
+        testCase: "LV4M-01",
+        band: "2.4 GHz",
+        channel: "8 / 2447 MHz",
+        population: "10-12p",
+        minRSSI: "-41 dBm",
+        maxRSSI: "-28 dBm",
+        avgRSSI: "-32.8 dBm",
+        protocol: "TCP",
+        packets: "34991",
+        interval: "0-60.02s",
+        transfer: "77.6 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "1.35 Mbps"
+    },
+
+    {
+        testCase: "LV4M-01",
+        band: "5 GHz",
+        channel: "40 / 5200 MHz",
+        population: "10-12p",
+        minRSSI: "-56 dBm",
+        maxRSSI: "-35 dBm",
+        avgRSSI: "-37.6 dBm",
+        protocol: "UDP",
+        packets: "49825",
+        interval: "0-61.15s",
+        transfer: "72.9 MB",
+        jitter: "10.567 ms",
+        packetLoss: "10,536/52,760 (20%)",
+        throughput: "0.92 Mbps"
+    },
+
+    {
+        testCase: "LV4M-01",
+        band: "5 GHz",
+        channel: "40 / 5200 MHz",
+        population: "10-12p",
+        minRSSI: "-41 dBm",
+        maxRSSI: "-34 dBm",
+        avgRSSI: "-36 dBm",
+        protocol: "TCP",
+        packets: "992",
+        interval: "0-60.01s",
+        transfer: "565 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "9.42 Mbps"
+    },
+
+    {
+        testCase: "LV4M-01",
+        band: "6 GHz",
+        channel: "5 / 5975 MHz",
+        population: "10-12p",
+        minRSSI: "-57 dBm",
+        maxRSSI: "-35 dBm",
+        avgRSSI: "-38 dBm",
+        protocol: "UDP",
+        packets: "44052",
+        interval: "0-60.00s",
+        transfer: "71.5 MB",
+        jitter: "0.000 ms",
+        packetLoss: "0/51,798 (0%)",
+        throughput: "1.19 Mbps"
+    },
+
+    {
+        testCase: "LV4M-01",
+        band: "6 GHz",
+        channel: "5 / 5975 MHz",
+        population: "10-12p",
+        minRSSI: "-41 dBm",
+        maxRSSI: "-34 dBm",
+        avgRSSI: "-37 dBm",
+        protocol: "TCP",
+        packets: "66048",
+        interval: "0-60.00s",
+        transfer: "334 MB",
+        jitter: "N/A",
+        packetLoss: "N/A",
+        throughput: "5.57 Mbps"
+    }
+
+];
+
+
+
+
+function displayResults(filter = "all") {
+
+    const tableBody =
+        document.getElementById("results-body");
+
+    tableBody.innerHTML = "";
+
+    const filteredResults =
+        filter === "all"
+        ? results
+        : results.filter(result =>
+            result.testCase === filter
+        );
+
+
+    filteredResults.forEach(result => {
+
+        const row =
+            document.createElement("tr");
+
+        if (result.invalid) {
+            row.classList.add("invalid-data");
+        }
+
+        row.innerHTML = `
+            <td>${result.testCase}</td>
+            <td>${result.band}</td>
+            <td>${result.channel}</td>
+            <td>${result.population}</td>
+            <td>${result.minRSSI}</td>
+            <td>${result.maxRSSI}</td>
+            <td>${result.avgRSSI}</td>
+            <td>${result.protocol}</td>
+            <td>${result.packets}</td>
+            <td>${result.interval}</td>
+            <td>${result.transfer}</td>
+            <td>${result.jitter}</td>
+            <td>${result.packetLoss}</td>
+            <td>${result.throughput}</td>
+        `;
+
+        tableBody.appendChild(row);
+
+    });
+
+}
+
+
+
+
+function filterData(testCase, button) {
+
+    displayResults(testCase);
+
+    const buttons =
+        document.querySelectorAll(".data-button");
+
+    buttons.forEach(btn =>
+        btn.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+}
+
+
+
+
+displayResults();
+
+</script>
+
+</body>
+
+</html>
