@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scenario Maps - WiFi 7 Mall Testing</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!--for some reason header and footer have to be hard coded in each page for it to work on github pages, can't be added as a component-->
+<header class="navbar">   
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="WiFi 7 Logo">
+            
+        </a>
+        
+    </div>
+
+    <div><h1 class="site-header">WiFi 7 Mall Testing</h1></div>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="methodology.html">Methodology</a></li>
+
+            <li><a href="tool.html">Wifi 7 mall tool</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main class="scenario-page">
+
+    <h1 id="floor-title">Floor 1</h1>
+
+    <p class="scenario-description">
+        Select a floor to view the testing locations used during
+        the WiFi 7 investigation at Westfield Newmarket.
+    </p>
+
+    <div class="floor-buttons">
+
+        <button class="floor-button active" onclick="changeFloor(1, this)">
+            1
+        </button>
+
+        <button class="floor-button" onclick="changeFloor(2, this)">
+            2
+        </button>
+
+        <button class="floor-button" onclick="changeFloor(3, this)">
+            3
+        </button>
+
+        <button class="floor-button" onclick="changeFloor(4, this)">
+            4
+        </button>
+
+    </div>
+
+    <div class="map-container">
+
+        <img
+            id="floor-map"
+            src="images/mapLevel1.png"
+            alt="Westfield Newmarket Level 1 testing map"
+        >
+
+    </div>
+
+</main>
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <h3>About Secure-WiFi</h3>
+
+            <p>
+
+                Secure-WiFi aims to provide Wi-Fi security assessment
+                for home Wi-Fi and businesses and recommendations
+                for best practices.
+
+                Our recommendations are tailored to meet your
+                security needs, ensuring optimal protection and
+                performance.
+
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                
+
+                <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+
+                <li><a href="faq.html">FAQs</a></li>
+
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 WiFi 7 Mall Testing Project
+
+    </div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+<script>
+
+function changeFloor(floor, button) {
+
+    const map = document.getElementById("floor-map");
+    const title = document.getElementById("floor-title");
+
+    map.src = "images/mapLevel" + floor + ".png";
+    map.alt = "Westfield Newmarket Level " + floor + " testing map";
+
+    title.textContent = "Floor " + floor;
+
+    const buttons = document.querySelectorAll(".floor-button");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Setup - WiFi 7 Mall Testing</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!--for some reason header and footer have to be hard coded in each page for it to work on github pages, can't be added as a component-->
+<header class="navbar">   
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="WiFi 7 Logo">
+            
+        </a>
+        
+    </div>
+
+    <div><h1 class="site-header">WiFi 7 Mall Testing</h1></div>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="methodology.html">Methodology</a></li>
+
+            <li><a href="tool.html">Wifi 7 mall tool</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main class="setup-page">
+
+    <h1 class="page-title">Testing Setup</h1>
+
+    <p class="page-intro">
+        The equipment and procedure used to conduct the WiFi 7
+        field investigation at Westfield Newmarket.
+    </p>
+
+
+    <div class="setup-grid">
+
+        <!-- LEFT SIDE -->
+        <div class="setup-left">
+
+            <section class="setup-card">
+
+                <h2>Our Equipment</h2>
+
+                <div class="equipment-item">
+
+                    <div>
+                        <h3>ASUS RT-BE92U WiFi 7 Router</h3>
+
+                        <p>
+                            1 × ASUS RT-BE92U (BE9700) Tri-Band
+                            WiFi 7 router.
+                        </p>
+
+                        <p>
+                            Supports 2.4 GHz, 5 GHz and 6 GHz WiFi 7
+                            operation.
+                        </p>
+
+                        <p class="equipment-price">
+                            Cost: NZD $699
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="equipment-item">
+
+                    <div>
+                        <h3>TP-Link Archer TBE400UH</h3>
+
+                        <p>
+                            2 × TP-Link Archer TBE400UH BE6500
+                            WiFi 7 High Gain Wireless USB Adapters.
+                        </p>
+
+                        <p>
+                            Used by the client devices to connect
+                            to the WiFi 7 test network.
+                        </p>
+
+                        <p class="equipment-price">
+                            Cost: NZD $149 each
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="equipment-item">
+
+                    <div>
+                        <h3>HP EliteBook 840 G10</h3>
+
+                        <p>
+                            2 × HP EliteBook 840 G10 notebooks
+                            used as the client and server devices.
+                        </p>
+
+                        <p>
+                            Intel Core i5-1335U, 16 GB DDR5 RAM
+                            and Intel AX211 WiFi 6E.
+                        </p>
+
+                        <p class="equipment-price">
+                            Cost: NZD $2,765 each
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="setup-card">
+
+                <h2>Our Environment</h2>
+
+                <p>
+                    Testing was conducted at predetermined locations
+                    throughout Westfield Newmarket.
+                </p>
+
+                <p>
+                    Multiple floors and different mall environments
+                    were selected to investigate WiFi performance
+                    under real-world conditions.
+                </p>
+
+                <a class="setup-link" href="scenario-maps.html">
+                    View Testing Locations →
+                </a>
+
+            </section>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="setup-card setup-tutorial">
+
+            <h2>Setup Tutorial</h2>
+
+            <ol>
+
+                <li>
+                    Choose a testing scenario and place the equipment
+                    at the predetermined testing location.
+                </li>
+
+                <li>
+                    Set up the ASUS WiFi 7 router, client devices
+                    and TP-Link WiFi 7 adapters.
+                </li>
+
+                <li>
+                    Ensure Kali Linux is configured correctly and
+                    the WiFi 7 adapter drivers are up to date.
+                </li>
+
+                <li>
+                    Connect the devices to the required WiFi network
+                    and frequency band.
+                </li>
+
+                <li>
+                    Configure the client and server devices for
+                    iperf3 testing.
+                </li>
+
+                <li>
+                    Use iperf3 to generate network traffic between
+                    the two client devices.
+                </li>
+
+                <li>
+                    Capture the wireless traffic using Wireshark.
+                </li>
+
+                <li>
+                    Record the throughput and RSSI measurements
+                    from the test.
+                </li>
+
+                <li>
+                    Store the results in the investigation dataset.
+                </li>
+
+                <li>
+                    Repeat the experiment for the required frequency
+                    bands and predetermined testing scenarios.
+                </li>
+
+            </ol>
+
+        </section>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <h3>About Secure-WiFi</h3>
+
+            <p>
+
+                Secure-WiFi aims to provide Wi-Fi security assessment
+                for home Wi-Fi and businesses and recommendations
+                for best practices.
+
+                Our recommendations are tailored to meet your
+                security needs, ensuring optimal protection and
+                performance.
+
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                
+
+                <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+
+                <li><a href="faq.html">FAQs</a></li>
+
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 WiFi 7 Mall Testing Project
+
+    </div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
