@@ -1,1 +1,2 @@
-# wifi-7-in-malls
+# Field investigation analysing Wifi-7 network performance and link quality in a high density shopping mall enviroment
+
