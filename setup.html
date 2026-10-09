@@ -31,11 +31,12 @@
 
     <nav>
 
-        <ul>
+      <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="setup.html">Setup</a></li>
     <li><a href="scenario-maps.html">Scenario Maps</a></li>
     <li><a href="raw-data.html">Raw Data</a></li>
+    <li><a href="results.html">Results</a></li>
     <li><a href="about.html">About</a></li>
 </ul>
 
@@ -55,7 +56,7 @@
 
     <div class="setup-grid">
 
-        <!-- LEFT SIDE -->
+        <!-- left -->
         <div class="setup-left">
 
             <section class="setup-card">
@@ -157,7 +158,7 @@
         </div>
 
 
-        <!-- RIGHT SIDE -->
+        <!-- right-->
         <section class="setup-card setup-tutorial">
 
             <h2>Setup Tutorial</h2>
@@ -215,8 +216,122 @@
             </ol>
 
         </section>
+        </div>
+
+        <section class="setup-technical">
+
+    <h2 class="technical-title">Monitoring Mode & iPerf3 Configuration</h2>
+
+    <p class="technical-intro">
+        In order to collect data from the WiFi adapters, monitoring mode
+        was configured so that RadioTap headers and RSSI could be read
+        using Wireshark.
+    </p>
+
+    <div class="technical-grid">
+
+        <!-- Monitoring Mode -->
+        <div class="setup-card technical-card">
+
+            <h2>Monitoring Mode & Wireshark</h2>
+
+            <h3>Setup Configuration</h3>
+
+            <p><strong>Check the current network and channel:</strong></p>
+
+            <pre><code>iw dev wlan0 info</code></pre>
+
+            <p><strong>Set channel and frequency:</strong></p>
+
+            <pre><code>sudo iw dev wlan0mon set channel x
+sudo iw dev wlan0mon set freq &lt;frequency&gt;</code></pre>
+
+            <p><strong>Get the router BSSID:</strong></p>
+
+            <pre><code>iw dev wlan0 link</code></pre>
+
+            <p><strong>Get the Kali device MAC:</strong></p>
+
+            <pre><code>ip link show wlan0</code></pre>
+
+            <p><strong>Get the target device MAC:</strong></p>
+
+            <pre><code>arp -n | grep &lt;target-ip&gt;</code></pre>
+
+            <h3>Enable Monitoring Mode</h3>
+
+            <pre><code>sudo reboot
+sudo iw reg set NZ
+iw dev
+
+sudo airmon-ng check kill
+sudo airmon-ng start wlan0</code></pre>
+
+            <h3>Wireshark Filters</h3>
+
+            <p><strong>Only traffic on the BSS:</strong></p>
+
+            <pre><code>wlan.bssid == aa:bb:cc:dd:ee:ff</code></pre>
+
+            <p><strong>Traffic between the two devices:</strong></p>
+
+            <pre><code>(wlan.sa == &lt;your-kali-mac&gt; &amp;&amp; wlan.da == &lt;target-mac&gt;) ||
+(wlan.sa == &lt;target-mac&gt; &amp;&amp; wlan.da == &lt;your-kali-mac&gt;)</code></pre>
+
+            <p><strong>Client to server traffic:</strong></p>
+
+            <pre><code>wlan.sa == &lt;Client-mac&gt; &amp;&amp; wlan.da == &lt;Server-mac&gt;</code></pre>
+
+            <p><strong>iPerf3 UDP traffic:</strong></p>
+
+            <pre><code>(wlan.bssid == aa:bb:cc:dd:ee:ff) &amp;&amp; udp.port == 5201</code></pre>
+
+        </div>
+
+
+        <!-- iPerf3 -->
+        <div class="setup-card technical-card">
+
+            <h2>iPerf3 Configuration</h2>
+
+            <p>
+                iPerf3 was used to generate network traffic between
+                the client and server devices during testing.
+            </p>
+
+            <h3>Installation</h3>
+
+            <pre><code>sudo apt update
+sudo apt install -y iperf3</code></pre>
+
+            <h3>Server (Receiver)</h3>
+
+            <pre><code>iperf -s</code></pre>
+
+            <h3>Client (Sender)</h3>
+
+            <pre><code>iperf3 &lt;mode&gt; &lt;destination-ip&gt; &lt;udp-mode&gt; &lt;bandwidth&gt; &lt;duration&gt; &lt;interval&gt;</code></pre>
+
+            <p><strong>Example UDP test:</strong></p>
+
+            <pre><code>iperf3 -c &lt;server-ip&gt; -u -b 10M -t 60 -i 1</code></pre>
+
+            <h3>Test Configuration</h3>
+
+            <p>
+                For all tests, the iPerf3 client was configured to send
+                traffic for 60 seconds with intervals of 1 second.
+            </p>
+
+        </div>
 
     </div>
+    
+
+</section>
+
+    </div>
+    
 
 </main>
 

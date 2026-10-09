@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Results - WiFi 7 Mall Testing</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!--for some reason header and footer have to be hard coded in each page for it to work on github pages, can't be added as a component-->
+<header class="navbar">   
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="WiFi 7 Logo">
+            
+        </a>
+        
+    </div>
+
+    <div><h1 class="site-header">WiFi 7 Mall Testing</h1></div>
+
+    <nav>
+
+       <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="setup.html">Setup</a></li>
+    <li><a href="scenario-maps.html">Scenario Maps</a></li>
+    <li><a href="raw-data.html">Raw Data</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="about.html">About</a></li>
+</ul>
+
+    </nav>
+
+</header>
+
+<main class="results-page">
+
+    <h1 class="page-title">Results & Findings</h1>
+
+    <p class="page-intro">
+        Results from the WiFi 7 field investigation conducted at
+        Westfield Newmarket.
+    </p>
+
+
+    <!-- experiment results -->
+
+    <h2 class="results-section-title">Experiment Results</h2>
+
+    
+
+    <div class="experiment-grid">
+
+        <section class="results-card">
+
+            <h2>LV4M-01</h2>
+            <h3>Low Crowd Density</h3>
+
+            <p>
+                This experiment was conducted in an open section of the
+                mall rooftop with a low crowd density of approximately
+                10–12 people. The location provided minimal human
+                obstruction between the router and mobile device and
+                served as the baseline test condition.
+            </p>
+
+            <h3>Observation</h3>
+
+            <p>
+                At low crowd density, 2.4 GHz produced the strongest
+                average RSSI at -28.8 dBm, while 5 GHz UDP experienced
+                notable packet loss of 20% despite adequate signal
+                strength, suggesting early signs of interference even
+                at low occupancy.
+            </p>
+
+            
+
+        </section>
+
+
+        <section class="results-card">
+
+            <h2>LV1-04</h2>
+            <h3>Medium Crowd Density</h3>
+
+            <p>
+                This experiment was conducted at a second mall location
+                under medium crowd density conditions. The increased
+                number of people introduced additional signal
+                obstructions and greater multipath propagation.
+            </p>
+
+            <h3>Observation</h3>
+
+            <p>
+                Medium crowd density resulted in a noticeable drop in
+                RSSI across all bands compared to LV4M-01, with average
+                values declining by approximately 30 dBm.
+            </p>
+
+            <p>
+                Despite weaker signal strength, 6 GHz TCP achieved the
+                highest throughput at 105 Mbps, suggesting that channel
+                width advantages at 6 GHz compensated for signal loss
+                at medium density. UDP packet loss remained relatively
+                low across all bands at this location.
+            </p>
+
+        </section>
+
+
+        <section class="results-card">
+
+            <h2>LV3-03</h2>
+            <h3>Heavy Crowd Density</h3>
+
+            <p>
+                This experiment was conducted under heavy crowd density
+                conditions and represented the most challenging
+                propagation environment in the study.
+            </p>
+
+            <p>
+                The high number of people present created significant
+                signal absorption, increased multipath reflections and
+                elevated co-channel interference.
+            </p>
+
+            <h3>Observation</h3>
+
+            <p>
+                Heavy crowd density produced the weakest RSSI readings
+                across the tests. 6 GHz UDP averaged -84.45 dBm and
+                5 GHz TCP reached -84.37 dBm.
+            </p>
+
+            <p>
+                High packet loss was observed on 2.4 GHz UDP and
+                6 GHz UDP, with both recording approximately 55%
+                packet loss.
+            </p>
+
+            <p>
+                MLO recorded the strongest average RSSI at -34.64 dBm
+                despite the heavy density conditions.
+            </p>
+
+            
+
+        </section>
+
+
+        <section class="results-card">
+
+            <h2>LV2-06</h2>
+            <h3>Heavy Crowd Density</h3>
+
+            <p>
+                This experiment represented a second heavy density
+                testing location and was intended to assess the
+                consistency of results across different areas under
+                similar crowd conditions.
+            </p>
+
+            <h3>Observation</h3>
+
+            <p>
+                The available 2.4 GHz UDP result showed a stronger
+                average RSSI of -29 dBm compared with LV3-03 under
+                similar crowd density.
+            </p>
+
+            <p>
+                This suggests that the physical layout of the location
+                provided better propagation conditions.
+            </p>
+
+            
+
+        </section>
+
+    </div>
+
+
+    <!-- discussion -->
+
+    <h2 class="results-section-title">Overall Findings</h2>
+
+    <div class="findings-grid">
+
+        <section class="results-card">
+
+            <h2>Crowd Density</h2>
+
+            <p>
+                As crowd density increased from low to medium
+                conditions, average RSSI declined considerably.
+                The higher frequency bands experienced particularly
+                significant degradation under heavy crowd conditions.
+            </p>
+
+            <p>
+                The results also showed that crowd density alone did
+                not determine performance. LV2-06 produced a much
+                stronger 2.4 GHz RSSI than LV3-03 despite both being
+                heavy-density locations, indicating that physical
+                layout also affected signal propagation.
+            </p>
+
+        </section>
+
+
+        <section class="results-card">
+
+            <h2>Band Performance</h2>
+
+            <p>
+                Higher frequency bands were capable of providing high
+                throughput when propagation conditions were favourable.
+                However, performance at the higher frequency bands
+                degraded significantly in the most challenging
+                high-density environment.
+            </p>
+
+            <p>
+                The results indicate that frequency alone does not
+                determine performance in a complex indoor environment.
+                Crowd density, physical layout and obstruction also
+                influence which band is most suitable.
+            </p>
+
+        </section>
+
+
+        <section class="results-card">
+
+            <h2>UDP vs TCP</h2>
+
+            <p>
+                UDP testing revealed significant packet loss under
+                heavy crowd density that was not apparent in the same
+                way in TCP results.
+            </p>
+
+            <p>
+                At LV3-03, both 2.4 GHz UDP and 6 GHz UDP experienced
+                approximately 55% packet loss, while TCP primarily
+                showed reduced throughput as conditions deteriorated.
+            </p>
+
+        </section>
+
+
+        <section class="results-card">
+
+            <h2>Multi-Link Operation (MLO)</h2>
+
+            <p>
+                MLO demonstrated a notable advantage under heavy crowd
+                density conditions, recording an average RSSI of
+                -34.64 dBm at LV3-03.
+            </p>
+
+            <p>
+                This was substantially stronger than the single-band
+                5 GHz and 6 GHz UDP measurements at the same location.
+                However, MLO throughput remained relatively modest,
+                suggesting improved signal reliability did not
+                necessarily result in maximum throughput.
+            </p>
+
+        </section>
+
+    </div>
+
+    <!-- hypothesis -->
+
+    <h2 class="results-section-title">Hypothesis</h2>
+
+<section class="results-card model-card">
+
+    <h2>Null Hypothesis</h2>
+
+    <p>
+        The null hypothesis entering this study was that higher
+        frequency bands would deliver superior performance across
+        all mall conditions due to their greater bandwidth capacity.
+    </p>
+
+    <p>
+        The findings partially reject this hypothesis. While 6 GHz
+        did achieve the highest throughput under favourable conditions,
+        its performance degraded significantly under heavy crowd
+        density.
+    </p>
+
+    <p>
+        2.4 GHz demonstrated greater resilience to obstruction and
+        crowd density, indicating that frequency alone does not
+        determine performance in complex indoor environments.
+        Instead, the relationship between frequency, crowd density
+        and physical layout influences which band is most appropriate
+        for a given deployment scenario.
+    </p>
+
+</section>
+
+
+    <!-- propagation model -->
+
+    <h2 class="results-section-title">Propagation Model Analysis</h2>
+
+    <section class="results-card model-card">
+
+        <h2>Best-Fit Model</h2>
+
+        <p>
+            The measured RSSI values were compared with theoretical
+            propagation models to determine which model best represented
+            WiFi 7 signal behaviour within the mall environment.
+        </p>
+
+        <p>
+            Using the combined available testing data, the fitted
+            Log-Distance model produced an estimated path-loss exponent
+            of approximately 1.52.
+        </p>
+
+        <div class="model-table-container">
+
+            <table class="model-table">
+
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>MAE</th>
+                        <th>RMSE</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Free-Space Baseline</td>
+                        <td>4.16 dB</td>
+                        <td>5.08 dB</td>
+                    </tr>
+
+                    <tr>
+                        <td>Fitted Log-Distance</td>
+                        <td>3.85 dB</td>
+                        <td>4.99 dB</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <p>
+            The fitted Log-Distance model therefore produced a slightly
+            lower overall prediction error than the Free-Space baseline.
+        </p>
+
+        <h3>Log-Normal Shadowing Model</h3>
+
+        <p>
+            The Log-Normal Shadowing model uses the Log-Distance model
+            as its average propagation trend while also accounting for
+            random variations around that trend.
+        </p>
+
+        <p>
+            For the combined Westfield measurements, residual variation
+            around the fitted Log-Distance prediction was approximately
+            5 dB. This variation was consistent with the changing mall
+            environment, where walls, people, shop fronts and changing
+            line-of-sight conditions caused signal strength to fluctuate
+            independently of distance.
+        </p>
+
+        <p>
+            Therefore, the Log-Normal Shadowing Model was considered the
+            most appropriate overall model for representing the
+            Westfield environment, while the fitted Log-Distance model
+            provided the underlying average RSSI prediction.
+        </p>
+
+    </section>
+
+
+    <h2 class="results-section-title">Conclusion</h2>
+
+<section class="results-card model-card">
+
+    <p>
+        This project investigated WiFi 7 link quality in a
+        high-density shopping mall environment using the 2.4 GHz,
+        5 GHz and 6 GHz frequency bands.
+    </p>
+
+    <p>
+        The results showed noticeable differences between testing
+        locations. Level 3 experienced the strongest signal
+        degradation, particularly at the higher frequency bands,
+        while other locations produced more stable RSSI values.
+    </p>
+
+    <p>
+        This indicates that distance alone does not fully explain
+        WiFi 7 signal behaviour in a shopping mall. Factors such as
+        people, walls, shop fronts, reflections, multipath propagation
+        and changing line-of-sight conditions also affected measured
+        signal strength.
+    </p>
+
+    <p>
+        The propagation model comparison showed that the fitted
+        Log-Distance model produced slightly lower prediction error
+        than the Free-Space baseline. However, the Log-Normal
+        Shadowing Model was considered the most suitable overall
+        representation of the Westfield environment because it
+        accounts for both distance-related path loss and additional
+        variation caused by obstacles and changing indoor conditions.
+    </p>
+
+    <p>
+        Overall, the findings demonstrate that real-world WiFi 7
+        performance in a shopping mall differs from ideal theoretical
+        conditions. The collected measurements and best-fit model
+        analysis can support the development of a practical WiFi 7
+        link-quality estimation tool.
+    </p>
+
+</section>
+
+    
+
+</main>
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <h3>WiFi 7 Mall Testing Project</h3>
+
+            
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+           <ul>
+
+                
+
+                <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+
+                <li><a href="faq.html">FAQs</a></li>
+
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 WiFi 7 Mall Testing Project
+
+    </div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

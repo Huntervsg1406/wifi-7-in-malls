@@ -179,7 +179,7 @@ padding-top:20px;
 
 }
 
-/* SCENARIO MAPS */
+/* scenario maps */
 
 .scenario-page {
     width: 90%;
@@ -291,7 +291,7 @@ padding-top:20px;
 
 
 
-/* SETUP PAGE */
+/* setup page */
 
 .setup-page {
     width: 90%;
@@ -415,7 +415,7 @@ padding-top:20px;
 
 
 
-/* HOMEPAGE */
+/* homepage */
 
 .home-page {
     width: 90%;
@@ -432,7 +432,7 @@ padding-top:20px;
 }
 
 .home-content {
-    max-width: 700px;
+    max-width: 900px;
     text-align: center;
 }
 
@@ -495,7 +495,7 @@ padding-top:20px;
 
 
 
-/* RAW DATA PAGE */
+/* raw data page */
 
 .raw-data-page {
     width: 95%;
@@ -605,7 +605,7 @@ padding-top:20px;
 
 }
 
-/* ABOUT PAGE */
+/* about page */
 
 .about-page {
     width: 90%;
@@ -637,7 +637,7 @@ padding-top:20px;
 }
 
 
-/* TEAM */
+/* team members */
 
 .team-grid {
     display: grid;
@@ -668,7 +668,7 @@ padding-top:20px;
 }
 
 
-/* ABOUT MOBILE */
+/* about mobile */
 
 @media (max-width: 800px) {
 
@@ -683,7 +683,7 @@ padding-top:20px;
 
 }
 
-/* MOBILE NAVBAR */
+/* navbar for mobile */
 
 @media (max-width: 800px) {
 
@@ -720,3 +720,201 @@ padding-top:20px;
     nav a {
         font-size: 14px;
     }
+
+}
+
+
+/* tech setup page */
+
+.setup-technical {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.technical-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.technical-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.technical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.technical-card h2 {
+    text-align: center;
+}
+
+.technical-card h3 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+.technical-card pre {
+    background: #1f2937;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 8px 0 15px;
+}
+
+.technical-card code {
+    font-family: Consolas, monospace;
+    font-size: 14px;
+}
+
+
+/* tech setup for mobile */
+
+@media (max-width: 800px) {
+
+    .technical-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technical-card pre {
+        font-size: 12px;
+    }
+  }
+
+    /* results page */
+
+.results-page {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 20px 60px;
+}
+
+.results-section-title {
+    text-align: center;
+    font-size: 30px;
+    color: #222;
+    margin: 40px 0 20px;
+}
+
+
+/* result cards */
+
+.experiment-grid,
+.findings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.results-card {
+    background: white;
+    border: 6px solid #dddddd;
+    border-radius: 6px;
+    padding: 22px;
+}
+
+.results-card h2 {
+    color: #222;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.results-card h3 {
+    color: #333;
+    font-size: 18px;
+    margin: 15px 0 8px;
+}
+
+.results-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+
+/* notes */
+
+.result-note {
+    background: #fff4d6;
+    border-left: 4px solid #d6a400;
+    padding: 10px 12px;
+    margin-top: 15px;
+}
+
+
+/* propagation model */
+
+.model-card {
+    max-width: 900px;
+    margin: auto;
+}
+
+.model-table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.model-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.model-table th {
+    background: #d8d8d8;
+    text-align: left;
+    padding: 12px;
+}
+
+.model-table td {
+    padding: 12px;
+    border-bottom: 1px solid #dddddd;
+}
+
+
+/* limitations */
+
+.limitations-card {
+    max-width: 900px;
+    margin: auto;
+}
+
+.limitations-card ul {
+    padding-left: 25px;
+}
+
+.limitations-card li {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+
+/* results mobile */
+
+@media (max-width: 800px) {
+
+    .results-page {
+        width: 95%;
+        padding: 30px 10px;
+    }
+
+    .experiment-grid,
+    .findings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .results-section-title {
+        font-size: 26px;
+    }
+
+}
+
