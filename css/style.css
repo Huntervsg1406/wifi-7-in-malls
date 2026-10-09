@@ -682,3 +682,41 @@ padding-top:20px;
     }
 
 }
+
+/* MOBILE NAVBAR */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .site-header {
+        font-size: 24px;
+        text-align: center;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 18px;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
